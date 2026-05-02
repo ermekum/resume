@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Resume website for Ermek Umurzakov, Senior QA Engineer.">
+  <title>Ermek Umurzakov - Senior QA Engineer</title>
+  <script>
+    (function () {
+      var key = "ermek-resume-theme";
+      var saved = localStorage.getItem(key);
+      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-theme", saved || (prefersDark ? "dark" : "light"));
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <svg class="icon-sprite" aria-hidden="true" focusable="false">
+    <symbol id="icon-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4"></circle>
+      <path d="M12 2v2"></path>
+      <path d="M12 20v2"></path>
+      <path d="m4.93 4.93 1.41 1.41"></path>
+      <path d="m17.66 17.66 1.41 1.41"></path>
+      <path d="M2 12h2"></path>
+      <path d="M20 12h2"></path>
+      <path d="m6.34 17.66-1.41 1.41"></path>
+      <path d="m19.07 4.93-1.41 1.41"></path>
+    </symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24">
+      <path d="M20.5 14.2A8.7 8.7 0 0 1 9.8 3.5a8.7 8.7 0 1 0 10.7 10.7Z"></path>
+    </symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24">
+      <path d="M12 3v12"></path>
+      <path d="m7 10 5 5 5-5"></path>
+      <path d="M5 21h14"></path>
+    </symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24">
+      <path d="M4 6h16v12H4z"></path>
+      <path d="m4 7 8 6 8-6"></path>
+    </symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24">
+      <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 1.9Z"></path>
+    </symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v1.5A4.9 4.9 0 0 1 16 8Z"></path>
+      <path d="M2 9h4v12H2z"></path>
+      <circle cx="4" cy="4" r="2"></circle>
+    </symbol>
+    <symbol id="icon-telegram" viewBox="0 0 24 24">
+      <path d="M21.6 4.2 18.4 20a1.3 1.3 0 0 1-2.1.7l-4.8-3.6-2.6 2.5a.8.8 0 0 1-1.4-.4l-.8-4.8-4.3-1.5a1 1 0 0 1 0-1.9L20.2 3a1 1 0 0 1 1.4 1.2Z"></path>
+      <path d="m7.5 14.2 9.8-6.4-6.8 8.8"></path>
+    </symbol>
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+      <path d="M20.4 11.7a8.4 8.4 0 0 1-12.3 7.4L3 20.4l1.4-4.9a8.4 8.4 0 1 1 16-3.8Z"></path>
+      <path d="M8.8 8.9c.2-.5.4-.5.8-.5h.6c.2 0 .5 0 .7.5l.6 1.4c.1.3.1.5-.1.7l-.4.5c-.1.1-.2.3 0 .6.4.8 1.1 1.5 1.9 1.9.3.2.5.1.6 0l.6-.7c.2-.2.4-.2.7-.1l1.5.7c.4.2.4.4.4.7-.1.7-.7 1.5-1.4 1.6-1.2.2-3.4-.3-5.3-2.2-1.6-1.6-2.3-3.4-2.1-4.4.1-.3.3-.5.4-.7Z"></path>
+    </symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24">
+      <path d="M7 17 17 7"></path>
+      <path d="M7 7h10v10"></path>
+    </symbol>
+  </svg>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="#top" aria-label="Back to top">EU</a>
+      <nav class="nav" aria-label="Resume sections">
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+      </nav>
+      <div class="actions" aria-label="Resume actions">
+        <a class="icon-action" href="resume-ermek-umurzakov.pdf" download aria-label="Download PDF resume" title="Download PDF resume">
+          <svg class="icon"><use href="#icon-download"></use></svg>
+        </a>
+        <button class="icon-action" id="themeToggle" type="button" aria-label="Switch theme" title="Switch theme" aria-pressed="false">
+          <svg class="icon icon--sun"><use href="#icon-sun"></use></svg>
+          <svg class="icon icon--moon"><use href="#icon-moon"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell" id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__copy">
+        <p class="role">Senior QA Engineer</p>
+        <h1 id="hero-title">Ermek Umurzakov</h1>
+        <p class="lead">
+          QA engineer with 4+ years in backend, platform, fintech and crypto testing.
+          I build QA processes from scratch, automate release checks, mentor engineers
+          and bring AI tools into everyday quality work.
+        </p>
+      </div>
+
+      <aside class="contact-panel" aria-label="Contact links">
+        <div class="availability">
+          <span class="availability__dot"></span>
+          <p>Direct channels for hiring, collaboration and professional contact.</p>
+        </div>
+        <div class="contact-grid">
+          <a class="contact-link" href="https://www.linkedin.com/in/ermek-umurzakov/" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+            <span class="contact-link__icon"><svg class="icon"><use href="#icon-linkedin"></use></svg></span>
+            <span><strong>LinkedIn</strong><small>Profile</small></span>
+            <svg class="contact-link__arrow"><use href="#icon-arrow"></use></svg>
+          </a>
+          <a class="contact-link" href="https://t.me/ermekum" target="_blank" rel="noopener" aria-label="Telegram">
+            <span class="contact-link__icon"><svg class="icon"><use href="#icon-telegram"></use></svg></span>
+            <span><strong>Telegram</strong><small>@ermekum</small></span>
+            <svg class="contact-link__arrow"><use href="#icon-arrow"></use></svg>
+          </a>
+          <a class="contact-link" href="https://wa.me/77755941620" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <span class="contact-link__icon"><svg class="icon"><use href="#icon-whatsapp"></use></svg></span>
+            <span><strong>WhatsApp</strong><small>Message</small></span>
+            <svg class="contact-link__arrow"><use href="#icon-arrow"></use></svg>
+          </a>
+          <a class="contact-link" href="mailto:ermek@live.ru" aria-label="Email">
+            <span class="contact-link__icon"><svg class="icon"><use href="#icon-mail"></use></svg></span>
+            <span><strong>Email</strong><small>ermek@live.ru</small></span>
+            <svg class="contact-link__arrow"><use href="#icon-arrow"></use></svg>
+          </a>
+          <a class="contact-link contact-link--wide" href="tel:+77755941620" aria-label="Phone">
+            <span class="contact-link__icon"><svg class="icon"><use href="#icon-phone"></use></svg></span>
+            <span><strong>Phone</strong><small>+7 775 594 16 20</small></span>
+            <svg class="contact-link__arrow"><use href="#icon-arrow"></use></svg>
+          </a>
+        </div>
+      </aside>
+    </section>
+
+    <section class="metrics" aria-label="Career highlights">
+      <div class="metric">
+        <strong>4+ years</strong>
+        <span>Backend and platform QA</span>
+      </div>
+      <div class="metric">
+        <strong>1,000+</strong>
+        <span>Dashboard users in org scope</span>
+      </div>
+      <div class="metric">
+        <strong>30+</strong>
+        <span>Microservices tested</span>
+      </div>
+      <div class="metric">
+        <strong>AI in QA</strong>
+        <span>Talks, tooling and workflow adoption</span>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="profile-title">
+      <div class="section__head">
+        <span>01</span>
+        <h2 id="profile-title">Profile</h2>
+      </div>
+      <p class="section__text">
+        Strong in API testing, regression automation, quality metrics, test strategy
+        and cross-functional delivery. I focus on scalable quality systems, clear
+        risk signals and pragmatic engineering collaboration.
+      </p>
+    </section>
+
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="section__head">
+        <span>02</span>
+        <h2 id="experience-title">Experience</h2>
+      </div>
+      <div class="timeline">
+        <article class="job">
+          <div class="job__header">
+            <div>
+              <h3>QA Engineer</h3>
+              <p>T-Bank</p>
+            </div>
+            <time>2023 - Present</time>
+          </div>
+          <ul>
+            <li>Defined QA strategy from scratch as the sole QA engineer in a cross-functional product team.</li>
+            <li>Automated regression for a mission-critical service, improving release speed and confidence.</li>
+            <li>Built a department-wide quality metrics dashboard for an organization of 1,000+ employees.</li>
+            <li>Delivered talks on testing and AI, including an internal meetup with 400+ attendees.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job__header">
+            <div>
+              <h3>QA Engineer</h3>
+              <p>Scalable Solutions</p>
+            </div>
+            <time>2021 - 2023</time>
+          </div>
+          <ul>
+            <li>Tested backend systems of a 30+ microservices crypto-fintech platform.</li>
+            <li>Created 1,500+ Allure test cases and expanded Postman collections by 900+ API endpoints.</li>
+            <li>Reported 300+ defects and completed 190+ Jira tasks across product releases.</li>
+            <li>Implemented CI-integrated regression checks and Java smoke tests for core services.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="section__head">
+        <span>03</span>
+        <h2 id="skills-title">Skills</h2>
+      </div>
+      <div class="skills">
+        <section class="skill-group">
+          <h3>Testing</h3>
+          <p>Manual and automated testing, test planning, test design, defect lifecycle, risk-based testing.</p>
+        </section>
+        <section class="skill-group">
+          <h3>Backend</h3>
+          <p>REST API, Postman automation, SQL, message queues, microservices, Gatling performance tests.</p>
+        </section>
+        <section class="skill-group">
+          <h3>Delivery</h3>
+          <p>Jira, Confluence, Allure, Git, Jenkins, GitLab CI/CD, Scrum, Kanban, SDLC and STLC.</p>
+        </section>
+        <section class="skill-group">
+          <h3>Observability</h3>
+          <p>ELK log analysis, Prometheus, Grafana, quality metrics, dashboards and alerting.</p>
+        </section>
+      </div>
+    </section>
+
+    <section class="section section--split" id="education" aria-labelledby="education-title">
+      <div class="section__head">
+        <span>04</span>
+        <h2 id="education-title">Education</h2>
+      </div>
+      <div class="education">
+        <h3>Master's Degree</h3>
+        <p>Emperor Alexander I St. Petersburg State Transport University</p>
+        <time>2014 - 2020</time>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Ermek Umurzakov</span>
+    <span id="year"></span>
+  </footer>
+</body>
+</html>
