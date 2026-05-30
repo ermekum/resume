@@ -1,0 +1,28 @@
+name: Deploy Staging
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch to deploy to staging"
+        required: true
+        default: "main"
+        type: string
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy selected branch to staging
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          DEPLOY_BRANCH: ${{ inputs.branch }}
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          envs: DEPLOY_BRANCH
+          script: |
+            /var/www/resume/deploy-staging.sh "$DEPLOY_BRANCH"
